@@ -1,9 +1,10 @@
 .developementAreaContainer {
   display: grid;
-  grid-template-columns: repeat(2, 45vw);
-  grid-template-rows: minmax(60vw, auto);
+  grid-template-columns: repeat(2, 48vw);
+  height: 100vh;
   gap: 1em;
   height: auto;
-  width: 100vw;
   padding: 10px;
+  margin-top: -2vh;
+  background-color: #424348;
 }

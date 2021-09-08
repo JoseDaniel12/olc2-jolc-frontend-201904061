@@ -1,5 +1,24 @@
-.consoleContainer {
-  height: 80vh;
-  background-color: blue;
+.codeEditorContainer {
+  height: 75vh;
+  background-color: #485d6e;
   padding: 10px;
+  border-radius: 0 0 5px 5px;
+}
+
+.header {
+  height: 10vh;
+  background-color: #586979;
+  border-radius: 5px 5px 0px 0px;
+  color: whitesmoke;
+  padding: 10 px;
+}
+
+p {
+  display: inline-block;
+}
+
+button {
+  float: right;
+  margin-right: 2%;
+  margin-top: 2%;
 }

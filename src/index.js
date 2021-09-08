@@ -1,5 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import DevelopmentArea from "./pages/DevelopmentArea";
+import { BrowserRouter } from 'react-router-dom'
 
-ReactDOM.render(<DevelopmentArea />, document.getElementById("root"));
+import App from './App'
+
+ReactDOM.render(
+    <BrowserRouter> 
+        <App /> 
+    </BrowserRouter>,
+    document.getElementById("root")
+);

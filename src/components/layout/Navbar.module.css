@@ -1,0 +1,25 @@
+header {
+    background-color: #202221;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin-right: 20px;
+}
+
+li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F25B25;
+}
+
