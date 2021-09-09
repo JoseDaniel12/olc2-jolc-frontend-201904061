@@ -30,13 +30,13 @@ function Cst() {
             hierarchical: {
                 direction: "UD",
                 sortMethod: "directed",
-                nodeSpacing: 80,
-                levelSeparation: 80
+                levelSeparation: 80,
+                shakeTowards: "roots"
             }
         },
         interaction: {dragNodes :false},
         physics: {
-            enabled: false
+            enabled: false,
         },
         edges: {
             color: "whitesmoke"
