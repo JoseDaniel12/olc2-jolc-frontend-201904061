@@ -18,7 +18,34 @@ p {
 }
 
 button {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   float: right;
   margin-right: 2%;
   margin-top: 2%;
+  background-color: rgb(66,67,72);
+  color: rgb(235, 235, 235);
+  border-style: none;
+  border-radius:2px;
+  font-family: arial;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+
+
+button:hover {
+  border-style: solid;
+  border-color: rgb(30,30,30);
+}
+
+button:active {
+  border-style: solid;
+  border-color: orangered;
+}
+
+.titulo {
+  align-self:center;
+  margin-left: 1vw;
+  margin-top: 2.2vh;
 }

@@ -22,3 +22,9 @@ button {
   margin-right: 2%;
   margin-top: 2%;
 }
+
+.titulo {
+  align-self:center;
+  margin-left: 1vw;
+  margin-top: 2.2vh;
+}

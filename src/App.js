@@ -5,6 +5,7 @@ import DevelopmentArea from './pages/DevelopmentArea';
 import TablaErrores from './pages/TablaErrores';
 import TablaSimbolos from './pages/TablaSimbolos';
 import Welcome from './pages/Welcome';
+import Cst from './pages/Cst'
 
 function App() {
     return (
@@ -23,7 +24,7 @@ function App() {
                     <TablaErrores/>
                 </Route>
                 <Route path='/cst' exact>
-                    <DevelopmentArea/>
+                    <Cst/>
                 </Route>
             </Switch>
         </Layout>

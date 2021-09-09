@@ -10,7 +10,7 @@ function CodeEditor(props) {
   return (
     <div>
       <div className={classes.header}>
-        <p>Editor</p>
+        <p className={classes.titulo}>Editor</p>
       </div>
       <div className={classes.codeEditorContainer}>
           <Editor 

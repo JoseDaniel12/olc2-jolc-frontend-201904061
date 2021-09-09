@@ -5,7 +5,7 @@ function Console(props) {
   return (
     <div>
        <div className={classes.header}>
-        <p>Consola</p>
+        <p className={classes.titulo}>Consola</p>
         <button onClick={props.handleCompile}>Compilar</button>
         <button onClick={props.handleLimpiar}>Limpiar</button>
         <button onClick={props.handleCopy}>Copiar</button>

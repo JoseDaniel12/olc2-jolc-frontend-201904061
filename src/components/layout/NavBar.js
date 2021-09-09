@@ -7,7 +7,7 @@ function NavBar() {
       <nav>
         <ul>
           <li>
-            <Link to='/'>JOLC</Link>
+            <Link to='/'><b>JOLC</b></Link>
           </li>
           <li>
             <Link to='/compilar'>Compilador</Link>
@@ -19,7 +19,7 @@ function NavBar() {
             <Link to='/errores'>Errores</Link>
           </li>
           <li>  
-            <Link to='/favorites'>CST</Link>
+            <Link to='/cst'>CST</Link>
           </li>
         </ul>
       </nav>
