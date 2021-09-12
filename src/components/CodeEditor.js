@@ -7,10 +7,19 @@ function CodeEditor(props) {
     props.handleCodeCange(value)
   }
 
+  function handleCargaArchivo(e) {
+    props.handleCargaArchivo(e)
+  }
+
+
   return (
     <div>
       <div className={classes.header}>
-        <p className={classes.titulo}>Editor</p>
+        <p className={classes.titulo}><b>Editor</b></p>
+            <label className={classes.option} onChange={handleCargaArchivo}>
+              <input className={classes.hide} type="file"/>
+              Cargar Archivo
+            </label>
       </div>
       <div className={classes.codeEditorContainer}>
           <Editor 

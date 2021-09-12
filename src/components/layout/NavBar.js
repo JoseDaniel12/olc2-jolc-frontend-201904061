@@ -7,7 +7,7 @@ function NavBar() {
       <nav>
         <ul>
           <li>
-            <Link to='/'><b>JOLC</b></Link>
+            <Link to='/'><b className={classes.hola}>JOLC</b></Link>
           </li>
           <li>
             <Link to='/compilar'>Compilador</Link>
@@ -20,6 +20,9 @@ function NavBar() {
           </li>
           <li>  
             <Link to='/cst'>CST</Link>
+          </li>
+          <li>  
+            <a href='https://play.golang.org/' target="_blanck">Compilar codigo 3D</a>
           </li>
         </ul>
       </nav>

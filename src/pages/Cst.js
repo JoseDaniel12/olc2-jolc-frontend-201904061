@@ -28,7 +28,7 @@ function Cst() {
     const options = {
         layout: {
             hierarchical: {
-                direction: "UD",
+                rankdir: "LR",
                 sortMethod: "directed",
                 levelSeparation: 80,
                 shakeTowards: "roots"
@@ -44,25 +44,11 @@ function Cst() {
         height: "500px",
     };
     
-
-    const grafico2 = {
-        nodes: [
-            { id: 1, label: "Node 1" },
-            { id: 2, label: "Node 2" },
-            { id: 3, label: "Node 3", },
-            { id: 4, label: "Node 4"},
-            { id: 5, label: "Node 5" }
-        ],
-        edges: [
-            { from: 1, to: 2 },
-            { from: 1, to: 3 },
-            { from: 2, to: 4 },
-            { from: 2, to: 5 }
-        ]
-    };
-
   return (
       <div className={classes.marco}>
+        <div className={classes.cabezera}>
+            <p className={classes.alerta}>¡En caso de no ver disminuir el zoom!</p>
+        </div>
         <Graph
         graph={grafico}
         options={options}

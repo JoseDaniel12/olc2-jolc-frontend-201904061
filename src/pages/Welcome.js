@@ -1,6 +1,6 @@
 import classes from './Welcome.module.css'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+
 
 function Welcome() {
     return (
@@ -11,7 +11,10 @@ function Welcome() {
             </div>
             <div className={classes.segundoSeg}>
                 <h1 className={classes.nombre}>JOLC</h1>
-                <p className={classes.description}>Un lenguaje de progrmacion inspirado en julia.</p>
+                <p className={classes.description}>
+                    Un lenguaje de progrmacion inspirado en julia, para el curso de compiladores 2.
+                    <br/>Universidad de Sancarlos de Guatemala -USAC-
+                </p>
             </div>
             <Link  to='/compilar' className={classes.comenzar} >Comnezar</Link>
         </div>

@@ -5,10 +5,11 @@ function Console(props) {
   return (
     <div>
        <div className={classes.header}>
-        <p className={classes.titulo}>Consola</p>
+        <p className={classes.titulo}><b>Consola</b></p>
         <button onClick={props.handleCompile}>Compilar</button>
         <button onClick={props.handleLimpiar}>Limpiar</button>
         <button onClick={props.handleCopy}>Copiar</button>
+        <button>Codigo 3D</button>
       </div>
     
       <div  className={classes.codeEditorContainer}>
@@ -16,7 +17,12 @@ function Console(props) {
             theme="vs-dark" 
             defaultLanguage="Text" 
             value  = {props.text}
-            readOnly = {true}
+            options={{
+              readOnly: true,
+              minimap: {
+                enabled: false,
+              },
+        }}
           />
       </div>
     </div>

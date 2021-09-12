@@ -27,4 +27,37 @@ button {
   align-self:center;
   margin-left: 1vw;
   margin-top: 2.2vh;
+  color:rgb(214, 214, 214);
+}
+
+.hide {
+  color: transparent;
+  width: 0;
+}
+
+.option {
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: right;
+  margin-right: 2%;
+  margin-top: 2%;
+  background-color: rgb(66,67,72);
+  color:rgb(230, 230, 230);
+  border-style: none;
+  border-radius:2px;
+  font-family: arial;
+  font-size: 16.5px;
+  box-sizing: border-box;
+}
+
+
+.option:hover {
+  border-style: solid;
+  border-color: rgb(30,30,30);
+}
+
+.option:active {
+  border-style: solid;
+  border-color: orangered;
 }

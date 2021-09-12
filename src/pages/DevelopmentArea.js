@@ -41,9 +41,6 @@ function DevelopmentArea() {
         setSalida(res)
         localStorage.setItem("salida", res)
       })
-    } else {
-      setSalida("")
-      localStorage.setItem("salida", "")
     }
   }
 
@@ -56,11 +53,25 @@ function DevelopmentArea() {
     navigator.clipboard.writeText(salida)
   }
 
+  function handleCargaArchivo(event) {
+    let archivo = event.target.files[0]
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        const text = reader.result.toString().trim();
+        setCodigo(text)
+        localStorage.setItem("codigo", text)
+        event.target.value = null;
+    }
+    reader.readAsText(archivo);
+
+  }
+
   return (
     <div className={classes.developementAreaContainer}>
       <CodeEditor 
         text = {codigo}
         handleCodeCange = {handleCodeCange}
+        handleCargaArchivo = {handleCargaArchivo}
       />
       <Console 
         text  = {salida}
