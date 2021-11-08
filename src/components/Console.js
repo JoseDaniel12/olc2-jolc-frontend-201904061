@@ -22,12 +22,7 @@ function Console(props) {
         <p className={classes.titulo}><b>Consola</b></p>
         <button onClick={props.handleLimpiar}>Limpiar</button>
         <button onClick={props.handleCopy}>Copiar</button>
-        <select id="optimizaciones" onChange={handleOptimizationOption}>
-          <option value="None">Optimizar</option>
-          <option value="Mirilla">Por Mirilla</option>
-          <option value="Bloques">Por Bloques</option>
-          <option value="MirillaBloques">Por Ambos</option>
-        </select>
+        <button onClick={props.handleMirilla}>Mirilla</button>
         <button onClick={props.handleCodigo3d}>Codigo 3D</button>
         <button onClick={props.handleCompile}>Interpretar</button>
       </div>

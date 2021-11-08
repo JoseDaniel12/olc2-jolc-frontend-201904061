@@ -7,20 +7,17 @@ function ReporteOptimizacion() {
 
     let [optimizaciones, setOptimizaciones] = useState([])
     useEffect(() => {
-        async function fetchData() {
-            let codigoExistente = localStorage.getItem('salida')
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ entrada: codigoExistente})
-              };
-              await fetch(compileRoot + "/reporteOptimizacion",requestOptions)
-              .then(res => res.json())
-              .then(res => {
-                setOptimizaciones(res)
-              })
-        }
-        fetchData()
+        let codigoExistente = localStorage.getItem('salida')
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ entrada: codigoExistente})
+          };
+          fetch(compileRoot + "/reporteOptimizacion",requestOptions)
+          .then(res => res.json())
+          .then(res => {
+            setOptimizaciones(res)
+          })
     }, [])
 
     return (
