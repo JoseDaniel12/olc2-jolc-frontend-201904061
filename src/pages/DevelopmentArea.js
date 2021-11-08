@@ -74,14 +74,14 @@ function DevelopmentArea() {
     }
   }
 
-  function handleMirilla() {
+  async function handleMirilla() {
     if (salida !== "") {
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ entrada: salida})
       };
-      fetch(compileRoot + "/optimizarMirilla",requestOptions)
+      await fetch(compileRoot + "/optimizarMirilla",requestOptions)
       .then(res => res.json())
       .then(res => {
         setSalida(res)

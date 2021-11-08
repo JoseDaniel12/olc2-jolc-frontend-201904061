@@ -16,7 +16,7 @@ function Welcome() {
                     <br/>Universidad de Sancarlos de Guatemala -USAC-
                 </p>
             </div>
-            <Link  to='/compilar' className={classes.comenzar} >Comnezar</Link>
+            <Link  to='/desarollo' className={classes.comenzar} >Comnezar</Link>
         </div>
     )
 }
