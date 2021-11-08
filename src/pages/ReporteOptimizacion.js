@@ -18,6 +18,7 @@ function ReporteOptimizacion() {
           .then(res => {
             setOptimizaciones(res)
           })
+          alert("termino")
     }, [])
 
     return (
