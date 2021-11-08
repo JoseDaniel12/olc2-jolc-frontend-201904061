@@ -12,7 +12,7 @@ function Welcome() {
             <div className={classes.segundoSeg}>
                 <h1 className={classes.nombre}>JOLC</h1>
                 <p className={classes.description}>
-                    Un lenguaje de progrmacion inspirado en julia, para el curso de compiladores 2.
+                    Un lenguaje de programacion inspirado en julia, para el curso de compiladores 2.
                     <br/>Universidad de Sancarlos de Guatemala -USAC-
                 </p>
             </div>

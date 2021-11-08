@@ -27,6 +27,11 @@ function DevelopmentArea() {
     localStorage.setItem("codigo", codigo)
   }
 
+  function handleSalidaChange(salida) {
+    setSalida(salida)
+    localStorage.setItem("salida", salida)
+  }
+
 
   function handleCompile() {
     if (codigo !== "") {
@@ -53,6 +58,39 @@ function DevelopmentArea() {
     navigator.clipboard.writeText(salida)
   }
 
+  function handleCodigo3d() {
+    if (codigo !== "") {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entrada: codigo})
+      };
+      fetch(compileRoot + "/compilar3d",requestOptions)
+      .then(res => res.json())
+      .then(res => {
+        setSalida(res)
+        localStorage.setItem("salida", res)
+      })
+    }
+  }
+
+  function handleMirilla() {
+    if (salida !== "") {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entrada: salida})
+      };
+      fetch(compileRoot + "/optimizarMirilla",requestOptions)
+      .then(res => res.json())
+      .then(res => {
+        setSalida(res)
+        localStorage.setItem("salida", res)
+        alert("Optimizacion completada!!!")
+      })
+    }
+  }
+
   function handleCargaArchivo(event) {
     let archivo = event.target.files[0]
     const reader = new FileReader();
@@ -75,9 +113,12 @@ function DevelopmentArea() {
       />
       <Console 
         text  = {salida}
+        handleSalidaChange = {handleSalidaChange}
         handleCompile = {handleCompile}
         handleLimpiar = {handleLimpiar}
         handleCopy = {handleCopy}
+        handleCodigo3d = {handleCodigo3d}
+        handleMirilla = {handleMirilla}
       />
     </div>
   );

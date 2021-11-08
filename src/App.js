@@ -4,6 +4,7 @@ import Layout from './components/layout/Layout'
 import DevelopmentArea from './pages/DevelopmentArea';
 import TablaErrores from './pages/TablaErrores';
 import TablaSimbolos from './pages/TablaSimbolos';
+import ReporteOptimizacion from './pages/ReporteOptimizacion'
 import Welcome from './pages/Welcome';
 import Cst from './pages/Cst'
 
@@ -22,6 +23,9 @@ function App() {
                 </Route>
                 <Route path='/errores' exact>
                     <TablaErrores/>
+                </Route>
+                <Route path='/reporteOptimizacion' exact>
+                    <ReporteOptimizacion/>
                 </Route>
                 <Route path='/cst' exact>
                     <Cst/>

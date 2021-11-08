@@ -1,6 +1,6 @@
 .developementAreaContainer {
   display: grid;
-  grid-template-columns: repeat(2, 48vw);
+  grid-template-columns: repeat(2, 48.5vw);
   height: 100vh;
   gap: 1em;
   height: auto;
