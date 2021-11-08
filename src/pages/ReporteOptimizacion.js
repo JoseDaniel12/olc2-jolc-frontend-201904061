@@ -17,8 +17,9 @@ function ReporteOptimizacion() {
           .then(res => res.json())
           .then(res => {
             setOptimizaciones(res)
+            alert(res)
+            console.log(res)
           })
-          alert("termino")
     }, [])
 
     return (
