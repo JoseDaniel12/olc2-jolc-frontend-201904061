@@ -86,7 +86,24 @@ function DevelopmentArea() {
       .then(res => {
         setSalida(res)
         localStorage.setItem("salida", res)
-        alert("Optimizacion completada!!!")
+        alert("Optimizacion por mirilla completada!!!")
+      })
+    }
+  }
+
+  function handleBloques() {
+    if (salida !== "") {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entrada: salida})
+      };
+      fetch(compileRoot + "/optimizarMirilla",requestOptions)
+      .then(res => res.json())
+      .then(res => {
+        setSalida(res)
+        localStorage.setItem("salida", res)
+        alert("Optimizacion por bloques completada!!!")
       })
     }
   }
@@ -119,6 +136,7 @@ function DevelopmentArea() {
         handleCopy = {handleCopy}
         handleCodigo3d = {handleCodigo3d}
         handleMirilla = {handleMirilla}
+        handleBloques = {handleBloques}
       />
     </div>
   );

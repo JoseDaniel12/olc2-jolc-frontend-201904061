@@ -6,15 +6,30 @@ function Console(props) {
     props.handleSalidaChange(value)
   }
 
+  function handleOptimizationOption(event) {
+    let opcion = event.target.value
+    if (opcion === "Mirilla") {
+      props.handleMirilla()
+    } else if (opcion === "Bloques") {
+      props.handleBloques()
+    }
+    event.target.value = "None"
+  }
+
   return (
     <div>
        <div className={classes.header}>
         <p className={classes.titulo}><b>Consola</b></p>
-        <button onClick={props.handleCompile}>Interpretar</button>
         <button onClick={props.handleLimpiar}>Limpiar</button>
         <button onClick={props.handleCopy}>Copiar</button>
-        <button onClick={props.handleMirilla}>Optimizar Mirilla</button>
+        <select id="optimizaciones" onChange={handleOptimizationOption}>
+          <option value="None">Optimizar</option>
+          <option value="Mirilla">Por Mirilla</option>
+          <option value="Bloques">Por Bloques</option>
+          <option value="MirillaBloques">Por Ambos</option>
+        </select>
         <button onClick={props.handleCodigo3d}>Codigo 3D</button>
+        <button onClick={props.handleCompile}>Interpretar</button>
       </div>
 
       <div  className={classes.codeEditorContainer}>

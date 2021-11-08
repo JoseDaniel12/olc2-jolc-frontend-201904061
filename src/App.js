@@ -15,7 +15,7 @@ function App() {
                 <Route path='/' exact>
                     <Welcome/>
                 </Route>
-                <Route path='/compilar' exact>
+                <Route path='/desarollo' exact>
                     <DevelopmentArea/>
                 </Route>
                 <Route path='/simbolos' exact>

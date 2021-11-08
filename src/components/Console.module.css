@@ -34,7 +34,7 @@ button {
 }
 
 select {
-  padding: 5px;
+  padding: 7.3px;
   padding-left: 10px;
   padding-right: 10px;
   float: right;
@@ -45,9 +45,16 @@ select {
   border-style: none;
   border-radius:2px;
   font-family: arial;
-  font-size: 16px;
+  font-size: 16.4px;
   box-sizing: border-box;
 }
+
+select:hover {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(30,30,30);
+}
+
 
 button:hover {
   border-style: solid;
