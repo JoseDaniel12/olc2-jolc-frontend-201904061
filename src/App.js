@@ -8,7 +8,11 @@ import ReporteOptimizacion from './pages/ReporteOptimizacion'
 import Welcome from './pages/Welcome';
 import Cst from './pages/Cst'
 
+import React, { useState } from 'react';
+
 function App() {
+    const [optimizaciones, setOptimizaciones] = useState([])
+
     return (
         <Layout>
             <Switch>
@@ -16,7 +20,9 @@ function App() {
                     <Welcome/>
                 </Route>
                 <Route path='/desarollo' exact>
-                    <DevelopmentArea/>
+                    <DevelopmentArea
+                        setOptimizaciones = {setOptimizaciones}
+                    />
                 </Route>
                 <Route path='/simbolos' exact>
                     <TablaSimbolos/>
@@ -25,7 +31,9 @@ function App() {
                     <TablaErrores/>
                 </Route>
                 <Route path='/reporteOptimizacion' exact>
-                    <ReporteOptimizacion/>
+                    <ReporteOptimizacion
+                        optimizaciones = {optimizaciones}
+                    />
                 </Route>
                 <Route path='/cst' exact>
                     <Cst/>

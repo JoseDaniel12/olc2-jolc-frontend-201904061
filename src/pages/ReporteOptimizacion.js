@@ -1,22 +1,8 @@
 import React, {useEffect, useState} from 'react'
 
-import compileRoot from "../Services/roots";
 import classes from "./ReporteOptimizacion.module.css"
 
-function ReporteOptimizacion() {
-
-    let [optimizaciones, setOptimizaciones] = useState([])
-    useEffect (() => {
-        const requestOptions = {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-          };
-          fetch(compileRoot + "/reporteOptimizacion", requestOptions)
-          .then(res => res.json())
-          .then(res => {
-            setOptimizaciones(res)
-          })
-    }, [])
+function ReporteOptimizacion(props) {
 
     return (
         <table className="table table-dark">
@@ -33,7 +19,7 @@ function ReporteOptimizacion() {
 
 
             <tbody>
-                {optimizaciones.map((optimizacion, i) => 
+                {props.optimizaciones.map((optimizacion, i) => 
                     <tr key={optimizacion.key}>
                         <th scope="row">{i + 1}</th>
                         <td>{optimizacion.tipo}</td>

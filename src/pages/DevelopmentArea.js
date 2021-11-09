@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import compileRoot from "../Services/roots";
 
 
-function DevelopmentArea() {
+function DevelopmentArea(props) {
   const [codigo, setCodigo] = useState("")
   const [salida, setSalida] = useState("")
 
@@ -84,8 +84,9 @@ function DevelopmentArea() {
       fetch(compileRoot + "/optimizarMirilla",requestOptions)
       .then(res => res.json())
       .then(res => {
-        setSalida(res)
-        localStorage.setItem("salida", res)
+        setSalida(res.codigo)
+        localStorage.setItem("salida", res.codigo)
+        props.setOptimizaciones(res.optimizaciones)
         alert("Optimizacion por mirilla completada!!!")
       })
     }
