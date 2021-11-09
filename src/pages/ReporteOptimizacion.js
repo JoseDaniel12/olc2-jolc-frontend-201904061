@@ -6,19 +6,15 @@ import classes from "./ReporteOptimizacion.module.css"
 function ReporteOptimizacion() {
 
     let [optimizaciones, setOptimizaciones] = useState([])
-    useEffect(() => {
-        let codigoExistente = localStorage.getItem('salida')
+    useEffect (() => {
         const requestOptions = {
-            method: 'POST',
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ entrada: codigoExistente})
           };
-          fetch(compileRoot + "/reporteOptimizacion",requestOptions)
+          fetch(compileRoot + "/reporteOptimizacion", requestOptions)
           .then(res => res.json())
           .then(res => {
             setOptimizaciones(res)
-            alert(res)
-            console.log(res)
           })
     }, [])
 
