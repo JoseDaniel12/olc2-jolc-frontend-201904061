@@ -28,7 +28,6 @@ function Cst() {
     const options = {
         layout: {
             hierarchical: {
-                rankdir: "LR",
                 sortMethod: "directed",
                 levelSeparation: 80,
                 shakeTowards: "roots"
