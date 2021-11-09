@@ -1,5 +1,3 @@
-import React, {useEffect, useState} from 'react'
-
 import classes from "./ReporteOptimizacion.module.css"
 
 function ReporteOptimizacion(props) {

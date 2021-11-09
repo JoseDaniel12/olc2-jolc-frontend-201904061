@@ -43,8 +43,10 @@ function DevelopmentArea(props) {
       fetch(compileRoot + "/compilar",requestOptions)
       .then(res => res.json())
       .then(res => {
-        setSalida(res)
-        localStorage.setItem("salida", res)
+        localStorage.setItem("salida", res.codigo)
+        setSalida(res.codigo)
+        props.setSimbolos(res.simbolos)
+        props.setErrores(res.errores)
       })
     }
   }
@@ -68,8 +70,10 @@ function DevelopmentArea(props) {
       fetch(compileRoot + "/compilar3d",requestOptions)
       .then(res => res.json())
       .then(res => {
-        setSalida(res)
-        localStorage.setItem("salida", res)
+        localStorage.setItem("salida", res.codigo3d)
+        setSalida(res.codigo3d)
+        props.setSimbolos(res.simbolos)
+        props.setErrores(res.errores)
       })
     }
   }
@@ -84,8 +88,8 @@ function DevelopmentArea(props) {
       fetch(compileRoot + "/optimizarMirilla",requestOptions)
       .then(res => res.json())
       .then(res => {
-        setSalida(res.codigo)
-        localStorage.setItem("salida", res.codigo)
+        localStorage.setItem("salida", res.codigo3d)
+        setSalida(res.codigo3d)
         props.setOptimizaciones(res.optimizaciones)
         alert("Optimizacion por mirilla completada!!!")
       })

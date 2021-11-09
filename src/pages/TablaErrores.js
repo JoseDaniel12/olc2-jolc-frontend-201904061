@@ -1,23 +1,4 @@
-import React, {useEffect, useState} from 'react'
-
-import compileRoot from "../Services/roots";
-
-function TablaErrores() {
-
-    let [tablaErrores, setTablaErrores] = useState([])
-    useEffect(() => {
-        let codigoExistente = localStorage.getItem('codigo')
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ entrada: codigoExistente})
-          };
-          fetch(compileRoot + "/errores",requestOptions)
-          .then(res => res.json())
-          .then(res => {
-            setTablaErrores(res)
-          })
-    }, [])
+function TablaErrores(props) {
 
     return (
         <table className="table table-dark">
@@ -34,7 +15,7 @@ function TablaErrores() {
 
 
         <tbody>
-            {tablaErrores.map((error, i) => 
+            {props.errores.map((error, i) => 
                 <tr>
                     <th scope="row">{i + 1}</th>
                     <td>{error.descripcion}</td>

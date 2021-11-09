@@ -12,6 +12,8 @@ import React, { useState } from 'react';
 
 function App() {
     const [optimizaciones, setOptimizaciones] = useState([])
+    const [simbolos, setSimbolos] = useState([])
+    const [errores, setErrores] = useState([])
 
     return (
         <Layout>
@@ -22,13 +24,19 @@ function App() {
                 <Route path='/desarollo' exact>
                     <DevelopmentArea
                         setOptimizaciones = {setOptimizaciones}
+                        setSimbolos = {setSimbolos}
+                        setErrores = {setErrores}
                     />
                 </Route>
                 <Route path='/simbolos' exact>
-                    <TablaSimbolos/>
+                    <TablaSimbolos
+                        simbolos = {simbolos}
+                    />
                 </Route>
                 <Route path='/errores' exact>
-                    <TablaErrores/>
+                    <TablaErrores
+                        errores = {errores}
+                    />
                 </Route>
                 <Route path='/reporteOptimizacion' exact>
                     <ReporteOptimizacion
