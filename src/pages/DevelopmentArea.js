@@ -103,12 +103,31 @@ function DevelopmentArea(props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ entrada: salida})
       };
-      fetch(compileRoot + "/optimizarMirilla",requestOptions)
+      fetch(compileRoot + "/optimizarBloques",requestOptions)
       .then(res => res.json())
       .then(res => {
-        setSalida(res)
-        localStorage.setItem("salida", res)
+        localStorage.setItem("salida", res.codigo3d)
+        setSalida(res.codigo3d)
+        props.setOptimizaciones(res.optimizaciones)
         alert("Optimizacion por bloques completada!!!")
+      })
+    }
+  }
+
+  function handleMirillaBloques() {
+    if (salida !== "") {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entrada: salida})
+      };
+      fetch(compileRoot + "/mirillaBloques",requestOptions)
+      .then(res => res.json())
+      .then(res => {
+        localStorage.setItem("salida", res.codigo3d)
+        setSalida(res.codigo3d)
+        props.setOptimizaciones(res.optimizaciones)
+        alert("Optimizaciones por mirilla y bloques completadas!!!")
       })
     }
   }
@@ -142,6 +161,7 @@ function DevelopmentArea(props) {
         handleCodigo3d = {handleCodigo3d}
         handleMirilla = {handleMirilla}
         handleBloques = {handleBloques}
+        handleMirillaBloques = {handleMirillaBloques}
       />
     </div>
   );
